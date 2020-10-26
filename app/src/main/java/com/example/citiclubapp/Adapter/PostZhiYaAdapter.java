@@ -44,7 +44,7 @@ public class PostZhiYaAdapter extends BaseAdapter {
         ViewHolder holder;
         if(view==null){
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.activity_cangdanzhiya_post_item,null);
+            view = inflater.inflate(R.layout.item_cangdanzhiya_post,null);
             holder.number = view.findViewById(R.id.Post_Number);
             holder.category = view.findViewById(R.id.Post_Category);
             holder.company = view.findViewById(R.id.Post_Company);

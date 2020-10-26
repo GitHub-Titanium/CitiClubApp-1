@@ -1,0 +1,520 @@
+Index: app/src/main/res/layout/activity_search_result.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".ui.BusinessHallPage.searchPage.SearchResultActivity\">\n\n    <LinearLayout\n        android:id=\"@+id/linearLayout3\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:orientation=\"vertical\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\">\n\n        <com.example.citiclubapp.widgetLayout.InsideTitle\n            android:id=\"@+id/inside_search_result\"\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"wrap_content\">\n\n        </com.example.citiclubapp.widgetLayout.InsideTitle>\n\n    </LinearLayout>\n\n    <ScrollView\n        android:layout_width=\"0dp\"\n        android:layout_height=\"0dp\"\n        android:layout_marginTop=\"40dp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/linearLayout3\"\n        app:layout_constraintVertical_bias=\"0.506\">\n\n        <LinearLayout\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"wrap_content\"\n            android:orientation=\"vertical\" >\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/warrantNum\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <TextView\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\"\n                android:text=\"仓单详情\"\n                android:textColor=\"#000000\"\n                android:textSize=\"20sp\"></TextView>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/cargo_type\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/cargo_num\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/cargo_owner\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/storage_expand\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/storage_place\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/storage_company\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n\n            <com.example.citiclubapp.widgetLayout.ItemInfo\n                android:id=\"@+id/preparing_date\"\n                android:layout_width=\"match_parent\"\n                android:layout_height=\"wrap_content\">\n\n            </com.example.citiclubapp.widgetLayout.ItemInfo>\n        </LinearLayout>\n    </ScrollView>\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_search_result.xml	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/res/layout/activity_search_result.xml	(date 1603518597714)
+@@ -4,7 +4,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".ui.BusinessHallPage.searchPage.SearchResultActivity">
++    tools:context=".ui.BusinessHallPage.SearchPage.SearchResultActivity">
+ 
+     <LinearLayout
+         android:id="@+id/linearLayout3"
+Index: app/src/main/java/com/example/citiclubapp/ui/LoginActivity/LoginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.ui.LoginActivity;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.EditText;\n\nimport com.example.citiclubapp.R;\nimport com.example.citiclubapp.ui.BusinessHallPage.ApplyIntoStorage.ApplyForStorageActivity;\nimport com.example.citiclubapp.ui.BusinessHallPage.searchPage.SearchBusinessActivity;\nimport com.example.citiclubapp.ui.RigesterActivity.RigesterActivity;\n\npublic class LoginActivity extends AppCompatActivity {\nEditText editText_Name,editText_PassWord;               //初始化布局文件一些控件的对象\n    Button regesiter_button,forget_password,button_login;\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_login);\n        regesiter_button=findViewById(R.id.regesiter_button);\n        regesiter_button.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                Intent intent=new Intent(LoginActivity.this, RigesterActivity.class);\n                startActivity(intent);\n            }\n        });\n        forget_password=findViewById(R.id.forget_password);\n        forget_password.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                Intent intent=new Intent(LoginActivity.this, SearchBusinessActivity.class);\n                startActivity(intent);\n            }\n        });\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/ui/LoginActivity/LoginActivity.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/ui/LoginActivity/LoginActivity.java	(date 1603519191363)
+@@ -9,19 +9,18 @@
+ import android.widget.EditText;
+ 
+ import com.example.citiclubapp.R;
+-import com.example.citiclubapp.ui.BusinessHallPage.ApplyIntoStorage.ApplyForStorageActivity;
+-import com.example.citiclubapp.ui.BusinessHallPage.searchPage.SearchBusinessActivity;
++import com.example.citiclubapp.ui.BusinessHallPage.BusinessHallActivity;
+ import com.example.citiclubapp.ui.RigesterActivity.RigesterActivity;
+ 
+ public class LoginActivity extends AppCompatActivity {
+ EditText editText_Name,editText_PassWord;               //初始化布局文件一些控件的对象
+-    Button regesiter_button,forget_password,button_login;
++    Button register_button,forget_password,button_login;
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_login);
+-        regesiter_button=findViewById(R.id.regesiter_button);
+-        regesiter_button.setOnClickListener(new View.OnClickListener() {
++        register_button =findViewById(R.id.regesiter_button);
++        register_button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent=new Intent(LoginActivity.this, RigesterActivity.class);
+@@ -32,7 +31,7 @@
+         forget_password.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                Intent intent=new Intent(LoginActivity.this, SearchBusinessActivity.class);
++                Intent intent=new Intent(LoginActivity.this, BusinessHallActivity.class);
+                 startActivity(intent);
+             }
+         });
+Index: app/src/main/res/layout/activity_search_business.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:id=\"@+id/linearLayout2\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".ui.BusinessHallPage.searchPage.SearchBusinessActivity\" >\n\n    <LinearLayout\n        android:layout_width=\"0dp\"\n        android:layout_height=\"274dp\"\n        android:layout_marginStart=\"8dp\"\n        android:layout_marginLeft=\"8dp\"\n        android:layout_marginEnd=\"8dp\"\n        android:layout_marginRight=\"8dp\"\n        android:orientation=\"horizontal\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\">\n\n        <com.example.citiclubapp.widgetLayout.searchbar\n            android:id=\"@+id/search_bar\"\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"match_parent\"\n            android:gravity=\"center|center_vertical\"\n            android:paddingLeft=\"8dp\"\n            android:paddingRight=\"8dp\">\n\n        </com.example.citiclubapp.widgetLayout.searchbar>\n    </LinearLayout>\n\n    <LinearLayout\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:orientation=\"horizontal\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\">\n        <com.example.citiclubapp.widgetLayout.InsideTitle\n            android:id=\"@+id/inside_search\"\n            android:layout_width=\"match_parent\"\n            android:layout_height=\"wrap_content\"\n            >\n\n        </com.example.citiclubapp.widgetLayout.InsideTitle>\n    </LinearLayout>\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_search_business.xml	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/res/layout/activity_search_business.xml	(date 1603518597903)
+@@ -5,7 +5,7 @@
+     android:id="@+id/linearLayout2"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".ui.BusinessHallPage.searchPage.SearchBusinessActivity" >
++    tools:context=".ui.BusinessHallPage.SearchPage.SearchBusinessActivity" >
+ 
+     <LinearLayout
+         android:layout_width="0dp"
+Index: app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/BusinessHallActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.ui.BusinessHallPage;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\n\nimport com.example.citiclubapp.R;\n\npublic class BusinessHallActivity extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_business_hall);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/BusinessHallActivity.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/BusinessHallActivity.java	(date 1603531584036)
+@@ -3,14 +3,45 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.os.Bundle;
++import android.widget.ListView;
+ 
+ import com.example.citiclubapp.R;
++import com.example.citiclubapp.widgetLayout.InsideTitle;
+ 
+ public class BusinessHallActivity extends AppCompatActivity {
+ 
++    InsideTitle title;
++    ListView listView;
++    BusinessHallAdapter businessHallAdapter;
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_business_hall);
++
++        title = findViewById(R.id.business_hall_title);
++        listView = findViewById(R.id.business_hall_listView);
++
++        title.setTitle("仓单宝");
++        //title.back.setImageDrawable(getDrawable(R.drawable.white_logo));
++        int[] img_ids = {
++                R.drawable.in,
++                R.drawable.in1,
++                R.drawable.in2,
++                R.drawable.in3,
++                R.drawable.in
++        };
++        String[] names = {
++                "入库申请",
++                "仓单质押",
++                "仓单查询",
++                "仓单销售",
++                "个人中心",
++        };
++
++        businessHallAdapter = new BusinessHallAdapter(this,img_ids,names);
++
++        listView.setAdapter(businessHallAdapter);
++
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_business_hall.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".ui.BusinessHallPage.BusinessHallActivity\">\n\n    <View\n        android:id=\"@+id/divider\"\n        android:layout_width=\"405dp\"\n        android:layout_height=\"6dp\"\n        android:background=\"?android:attr/listDivider\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_business_hall.xml	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/res/layout/activity_business_hall.xml	(date 1603521248073)
+@@ -1,18 +1,57 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
++<androidx.appcompat.widget.LinearLayoutCompat
++    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
++    android:orientation="vertical"
+     tools:context=".ui.BusinessHallPage.BusinessHallActivity">
+ 
+-    <View
+-        android:id="@+id/divider"
+-        android:layout_width="405dp"
+-        android:layout_height="6dp"
+-        android:background="?android:attr/listDivider"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++    <com.example.citiclubapp.widgetLayout.InsideTitle
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:id="@+id/business_hall_title">
++    </com.example.citiclubapp.widgetLayout.InsideTitle>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="80dp"
++        android:gravity="center"
++        android:weightSum="2">
++
++        <TextView
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="业务大厅"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:textStyle="bold"
++            android:layout_weight="1">
++        </TextView>
++
++        <LinearLayout
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_weight="1"
++            android:gravity="center">
++
++            <Button
++                android:layout_width="100dp"
++                android:layout_height="35dp"
++                android:text="我的仓单"
++                android:textColor="#FFFFFF"
++                android:background="@drawable/button_shape">
++            </Button>
++
++        </LinearLayout>
++
++    </LinearLayout>
++
++    <ListView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:id="@+id/business_hall_listView">
++
++    </ListView>
++
++</androidx.appcompat.widget.LinearLayoutCompat>
+\ No newline at end of file
+Index: app/src/main/java/com/example/citiclubapp/Adapter/PostZhiYaAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.Adapter;\n\nimport android.content.Context;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.BaseAdapter;\nimport android.widget.Button;\nimport android.widget.TextView;\nimport android.widget.Toast;\n\nimport com.example.citiclubapp.Entity.Warrant;\nimport com.example.citiclubapp.R;\n\nimport java.util.List;\n\npublic class PostZhiYaAdapter extends BaseAdapter {\n    Context context;\n    LayoutInflater inflater;\n    List<Warrant> warrants;\n    public PostZhiYaAdapter(Context context, List<Warrant> warrants){\n        this.context = context;\n        this.inflater = LayoutInflater.from(context);\n        this.warrants = warrants;\n    }\n\n    @Override\n    public int getCount() {\n        return warrants==null?0:warrants.size();\n    }\n\n    @Override\n    public Object getItem(int i) {\n        return warrants==null?null:warrants.get(i);\n    }\n\n    @Override\n    public long getItemId(int i) {\n        return i;\n    }\n\n    @Override\n    public View getView(int i, View view, ViewGroup viewGroup) {\n        ViewHolder holder;\n        if(view==null){\n            holder = new ViewHolder();\n            view = inflater.inflate(R.layout.activity_cangdanzhiya_post_item,null);\n            holder.number = view.findViewById(R.id.Post_Number);\n            holder.category = view.findViewById(R.id.Post_Category);\n            holder.company = view.findViewById(R.id.Post_Company);\n            holder.marketValue = view.findViewById(R.id.Post_marketValue);\n            holder.loan = view.findViewById(R.id.Post_Loan);\n            holder.back = view.findViewById(R.id.Post_Back_Button);\n            view.setTag(holder);\n        }\n        else{\n            holder = (ViewHolder) view.getTag();\n        }\n\n        holder.number.setText(warrants.get(i).getWarrantID());\n        holder.company.setText(warrants.get(i).getStorageCompany());\n        holder.category.setText(warrants.get(i).getCargoItem());\n        holder.marketValue.setText(String.valueOf(warrants.get(i).getValue()));\n        holder.loan.setText(String.valueOf(warrants.get(i).getDebtvalue()));\n        holder.back.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                view.setBackgroundColor(view.getResources().getColor(R.color.bottom_icon_grey));\n                Toast.makeText(context,\"收回申请已提交，待审批！\",Toast.LENGTH_LONG).show();\n                view.setEnabled(false);\n            }\n        });\n\n        return view;\n    }\n\n    private static class ViewHolder {\n        TextView number;\n        TextView category;\n        TextView company;\n        TextView marketValue;\n        TextView loan;\n        Button back;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/Adapter/PostZhiYaAdapter.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/Adapter/PostZhiYaAdapter.java	(date 1603520914740)
+@@ -44,7 +44,7 @@
+         ViewHolder holder;
+         if(view==null){
+             holder = new ViewHolder();
+-            view = inflater.inflate(R.layout.activity_cangdanzhiya_post_item,null);
++            view = inflater.inflate(R.layout.item_cangdanzhiya_post,null);
+             holder.number = view.findViewById(R.id.Post_Number);
+             holder.category = view.findViewById(R.id.Post_Category);
+             holder.company = view.findViewById(R.id.Post_Company);
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Tue Aug 04 19:03:07 CST 2020\ndistributionBase=GRADLE_USER_HOME\ndistributionPath=wrapper/dists\nzipStoreBase=GRADLE_USER_HOME\nzipStorePath=wrapper/dists\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-5.1.1-all.zip\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ gradle/wrapper/gradle-wrapper.properties	(date 1603516756024)
+@@ -1,6 +1,6 @@
+-#Tue Aug 04 19:03:07 CST 2020
++#Sat Oct 24 13:19:16 CST 2020
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-5.1.1-all.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.7-all.zip
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\n\nbuildscript {\n    ext.kotlin_version = '1.4.10'\n    repositories {\n        google()\n        jcenter()\n        \n    }\n    dependencies {\n        classpath 'com.android.tools.build:gradle:3.4.1'\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version\"\n\n        // NOTE: Do not place your application dependencies here; they belong\n        // in the individual module build.gradle files\n    }\n}\n\nallprojects {\n    repositories {\n        google()\n        jcenter()\n        \n    }\n}\n\ntask clean(type: Delete) {\n    delete rootProject.buildDir\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ build.gradle	(date 1603516480088)
+@@ -1,14 +1,14 @@
+ // Top-level build file where you can add configuration options common to all sub-projects/modules.
+ 
+ buildscript {
+-    ext.kotlin_version = '1.4.10'
++    ext.kotlin_version = '1.3.72'
+     repositories {
+         google()
+         jcenter()
+         
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:3.4.1'
++        classpath 'com.android.tools.build:gradle:4.1.0'
+         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+ 
+         // NOTE: Do not place your application dependencies here; they belong
+Index: app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/searchPage/SearchResultActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.ui.BusinessHallPage.searchPage;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\n\nimport com.example.citiclubapp.R;\nimport com.example.citiclubapp.widgetLayout.InsideTitle;\nimport com.example.citiclubapp.widgetLayout.ItemInfo;\n\npublic class SearchResultActivity extends AppCompatActivity {\n    private InsideTitle insideTitle;\n    private ItemInfo warrantNum,cargo_type,cargo_num,cargo_owner,storage_expand,storage_place,\n            storage_company, preparing_date;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_search_result);\n        IniView();\n    }\n    void IniView(){\n        warrantNum=findViewById(R.id.warrantNum);\n        cargo_type=findViewById(R.id.cargo_type);\n        cargo_num=findViewById(R.id.cargo_num);\n        cargo_owner=findViewById(R.id.cargo_owner);\n        storage_expand=findViewById(R.id.storage_expand);\n        storage_place=findViewById(R.id.storage_place);\n        storage_company=findViewById(R.id.storage_company);\n        preparing_date=findViewById(R.id.preparing_date);\n        insideTitle=findViewById(R.id.inside_search_result);\n        insideTitle.setTitle(\"查询结果:\");\n        warrantNum.setLeftText(\"仓单号:\");\n        cargo_type.setLeftText(\"货物种类:\");\n        cargo_num.setLeftText(\"货物数量:\");\n        cargo_owner.setLeftText(\"存货人姓名:\");\n        storage_expand.setLeftText(\"存储期限:\");\n        storage_place.setLeftText(\"存储场所:\");\n        storage_company.setLeftText(\"填发地:\");\n        preparing_date.setLeftText(\"填发日期:\");\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/searchPage/SearchResultActivity.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/SearchPage/SearchResultActivity.java	(date 1603518597753)
+@@ -1,4 +1,4 @@
+-package com.example.citiclubapp.ui.BusinessHallPage.searchPage;
++package com.example.citiclubapp.ui.BusinessHallPage.SearchPage;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>apply plugin: 'com.android.application'\n\n\nandroid {\n    compileSdkVersion 29\n    buildToolsVersion \"29.0.2\"\n    defaultConfig {\n        applicationId \"com.example.citiclubapp\"\n        minSdkVersion 15\n        targetSdkVersion 29\n        versionCode 1\n        versionName \"1.0\"\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n    //在layout文件夹下建立子文件夹\n    sourceSets {\n        main {\n            res.srcDirs = [\n                    'src/main/res'\n            ]\n        }\n    }\n}\n\n\ndependencies {\n    implementation fileTree(dir: 'libs', include: ['*.jar'])\n    implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'\n    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'\n    implementation 'com.google.android.material:material:1.2.1'\n    implementation 'androidx.annotation:annotation:1.1.0'\n    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\n    implementation 'androidx.navigation:navigation-fragment:2.1.0'\n    implementation 'androidx.navigation:navigation-ui:2.1.0'\n    implementation 'com.github.bumptech.glide:glide:4.11.0'\n    implementation 'androidx.viewpager:viewpager:1.0.0'\n    implementation 'org.xutils:xutils:3.5.0'\n    implementation 'com.androidkun:XTabLayout:1.1.4'\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'androidx.test:runner:1.3.0'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'\n    implementation \"androidx.recyclerview:recyclerview:1.1.0\"\n    // For control over item selection of both touch and mouse driven selection\n    implementation \"androidx.recyclerview:recyclerview-selection:1.1.0-rc03\"\n\n}\nrepositories {\n    mavenCentral()\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/build.gradle	(date 1603517506527)
+@@ -2,12 +2,12 @@
+ 
+ 
+ android {
+-    compileSdkVersion 29
++    compileSdkVersion 30
+     buildToolsVersion "29.0.2"
+     defaultConfig {
+         applicationId "com.example.citiclubapp"
+-        minSdkVersion 15
+-        targetSdkVersion 29
++        minSdkVersion 21
++        targetSdkVersion 30
+         versionCode 1
+         versionName "1.0"
+         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+@@ -32,18 +32,18 @@
+ dependencies {
+     implementation fileTree(dir: 'libs', include: ['*.jar'])
+     implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'
+-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
++    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+     implementation 'com.google.android.material:material:1.2.1'
+     implementation 'androidx.annotation:annotation:1.1.0'
+     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+-    implementation 'androidx.navigation:navigation-fragment:2.1.0'
+-    implementation 'androidx.navigation:navigation-ui:2.1.0'
++    implementation 'androidx.navigation:navigation-fragment:2.3.1'
++    implementation 'androidx.navigation:navigation-ui:2.3.1'
+     implementation 'com.github.bumptech.glide:glide:4.11.0'
+     implementation 'androidx.viewpager:viewpager:1.0.0'
+-    implementation 'org.xutils:xutils:3.5.0'
++    implementation 'org.xutils:xutils:3.8.12'
+     implementation 'com.androidkun:XTabLayout:1.1.4'
+-    testImplementation 'junit:junit:4.12'
++    testImplementation 'junit:junit:4.13.1'
+     androidTestImplementation 'androidx.test:runner:1.3.0'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+     implementation "androidx.recyclerview:recyclerview:1.1.0"
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1603515712725)
++++ .idea/compiler.xml	(date 1603515712725)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/searchPage/SearchBusinessActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.ui.BusinessHallPage.searchPage;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.provider.ContactsContract;\nimport android.view.View;\nimport android.widget.ImageView;\n\nimport com.example.citiclubapp.R;\nimport com.example.citiclubapp.widgetLayout.InsideTitle;\nimport com.example.citiclubapp.widgetLayout.searchbar;\n\npublic class SearchBusinessActivity extends AppCompatActivity {\nprivate InsideTitle insideTitle;\nprivate searchbar searchbar;\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_search_business);\n        iniView();\n        searchbar.getSearch().setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                Intent intent=new Intent(SearchBusinessActivity.this,SearchResultActivity.class);\n                startActivity(intent);\n            }\n        });\n    }\n\n    private void iniView() {\n        insideTitle=findViewById(R.id.inside_search);\n        searchbar=findViewById(R.id.search_bar);\n        insideTitle.setTitle(\"仓单查询\");\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/searchPage/SearchBusinessActivity.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/SearchPage/SearchBusinessActivity.java	(date 1603518597997)
+@@ -1,12 +1,10 @@
+-package com.example.citiclubapp.ui.BusinessHallPage.searchPage;
++package com.example.citiclubapp.ui.BusinessHallPage.SearchPage;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
+-import android.provider.ContactsContract;
+ import android.view.View;
+-import android.widget.ImageView;
+ 
+ import com.example.citiclubapp.R;
+ import com.example.citiclubapp.widgetLayout.InsideTitle;
+Index: app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/ApplyIntoStorage/ApplyForStorageActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.ui.BusinessHallPage.ApplyIntoStorage;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.ArrayAdapter;\nimport android.widget.Button;\nimport android.widget.Spinner;\n\nimport com.example.citiclubapp.R;\nimport com.example.citiclubapp.widgetLayout.EditorBar;\nimport com.example.citiclubapp.widgetLayout.InsideTitle;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * 申请入库页面\n */\npublic class ApplyForStorageActivity extends AppCompatActivity {\n\n    private InsideTitle title;\n    private EditorBar type, num, address,expand;\n    private Button submit;\n    private Spinner company;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_apply_for_storage);\n        setTitle();\n        initializeEditBar();\n        initializeButton();\n        initializeSpinner();\n    }\n\n    private void setTitle(){\n        title=findViewById(R.id.title);\n        title.setTitle(\"入库申请\");\n    }\n\n    private void initializeEditBar(){\n        type=findViewById(R.id.type);\n        type.setText(\"货物种类\");\n        type.setHint(\"请输入入库货物种类\");\n        num=findViewById(R.id.num);\n        num.setText(\"货物数量\");\n        num.setHint(\"请输入货物数量\");\n        address=findViewById(R.id.address);\n        address.setText(\"现存地址\");\n        address.setHint(\"请输入当前货物存放地址\");\n        expand=findViewById(R.id.expand);\n        address.setText(\"存储期限\");\n        address.setHint(\"请输入存储期限（年/月/日）\");\n    }\n\n    private void initializeButton(){\n        submit=findViewById(R.id.submit);\n        submit.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                finish();\n            }\n        });\n    }\n\n    private void initializeSpinner(){\n        company=findViewById(R.id.company);\n        List<String> companyList=new ArrayList<>();\n        companyList.add(\"大连仓储公司\");\n        companyList.add(\"中运物流仓储公司\");\n        companyList.add(\"上海基森仓储公司\");\n        ArrayAdapter<String> adapter=new ArrayAdapter<>(ApplyForStorageActivity.this,\n                R.layout.spinner_item, companyList);\n        company.setAdapter(adapter);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/ApplyIntoStorage/ApplyForStorageActivity.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/ui/BusinessHallPage/ApplyIntoStorage/ApplyForStorageActivity.java	(date 1603520914705)
+@@ -72,7 +72,7 @@
+         companyList.add("中运物流仓储公司");
+         companyList.add("上海基森仓储公司");
+         ArrayAdapter<String> adapter=new ArrayAdapter<>(ApplyForStorageActivity.this,
+-                R.layout.spinner_item, companyList);
++                R.layout.item_spinner, companyList);
+         company.setAdapter(adapter);
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"com.example.citiclubapp\">\n\n    <application\n        android:allowBackup=\"true\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/AppTheme\">\n        <activity android:name=\".ui.NoticeActivity\"></activity>\n        <activity\n            android:name=\".ui.LegalPersonCertificateActivity.CertificateNavActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\"></activity>\n        <activity\n            android:name=\".ui.LegalPersonCertificateActivity.EnterpriceBankCertificationActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n        <activity\n            android:name=\".ui.RigesterActivity.SuccessfulRiges\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n        <activity\n            android:name=\".ui.RigesterActivity.RigesterActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" /> <!-- 登录界面 -->\n        <activity\n            android:name=\".ui.LoginActivity.LoginActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" /> <!-- 启动界面（主界面） -->\n        <activity\n            android:name=\".ui.SplashPage.splashActivity\"\n            android:theme=\"@style/Theme.AppCompat.NoActionBar\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n        <activity\n            android:name=\".ui.BusinessHallPage.searchPage.SearchBusinessActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n        <activity\n            android:name=\".ui.BusinessHallPage.searchPage.SearchResultActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n        <activity\n            android:name=\".ui.BusinessHallPage.ZhiyaActivity.ZhiYaActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n        <activity\n            android:name=\".ui.LegalPersonCertificateActivity.EnterpriseCertification\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n        <activity\n            android:name=\".ui.BusinessHallPage.ApplyIntoStorage.ApplyForStorageActivity\"\n            android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\" />\n    </application>\n\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/AndroidManifest.xml	(date 1603519308548)
+@@ -9,10 +9,15 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+-        <activity android:name=".ui.NoticeActivity"></activity>
++        <activity
++            android:name=".ui.BusinessHallPage.BusinessHallActivity"
++            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
++        <activity
++            android:name=".ui.NoticeActivity"
++            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+         <activity
+             android:name=".ui.LegalPersonCertificateActivity.CertificateNavActivity"
+-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
++            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+         <activity
+             android:name=".ui.LegalPersonCertificateActivity.EnterpriceBankCertificationActivity"
+             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+@@ -35,10 +40,10 @@
+             </intent-filter>
+         </activity>
+         <activity
+-            android:name=".ui.BusinessHallPage.searchPage.SearchBusinessActivity"
++            android:name=".ui.BusinessHallPage.SearchPage.SearchBusinessActivity"
+             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+         <activity
+-            android:name=".ui.BusinessHallPage.searchPage.SearchResultActivity"
++            android:name=".ui.BusinessHallPage.SearchPage.SearchResultActivity"
+             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+         <activity
+             android:name=".ui.BusinessHallPage.ZhiyaActivity.ZhiYaActivity"
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"PLATFORM\" />\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ .idea/gradle.xml	(date 1603515666164)
+@@ -14,6 +14,7 @@
+           </set>
+         </option>
+         <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
+       </GradleProjectSettings>
+     </option>
+   </component>
+Index: app/src/main/java/com/example/citiclubapp/Adapter/NoticeAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.Adapter;\n\nimport android.content.Context;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.Button;\n\nimport androidx.annotation.NonNull;\nimport androidx.recyclerview.widget.RecyclerView;\n\nimport com.example.citiclubapp.R;\n\npublic class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {\n    private final LayoutInflater mLayoutInflater;\n    private final Context mContext;\n    public NoticeAdapter(Context context) {\n        mContext = context;\n        mLayoutInflater = LayoutInflater.from(context);\n    }\n\n    @NonNull\n    @Override\n    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\n        return new ViewHolder(mLayoutInflater.inflate(R.layout.recycler_notice_item, parent, false));\n    }\n\n    @Override\n    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {\n\n    }\n\n    @Override\n    public int getItemCount() {\n        return 0;\n    }\n\n    public static class ViewHolder extends RecyclerView.ViewHolder {\n        Button checkout;\n\n        public ViewHolder(@NonNull View itemView) {\n            super(itemView);\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/Adapter/NoticeAdapter.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/Adapter/NoticeAdapter.java	(date 1603520914780)
+@@ -22,7 +22,7 @@
+     @NonNull
+     @Override
+     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+-        return new ViewHolder(mLayoutInflater.inflate(R.layout.recycler_notice_item, parent, false));
++        return new ViewHolder(mLayoutInflater.inflate(R.layout.item_recycler_notice, parent, false));
+     }
+ 
+     @Override
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_7\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ .idea/misc.xml	(date 1603515712659)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/src/main/java/com/example/citiclubapp/Adapter/PreZhiYaAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.citiclubapp.Adapter;\n\nimport android.content.Context;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.BaseAdapter;\nimport android.widget.Button;\nimport android.widget.TextView;\nimport android.widget.Toast;\n\nimport com.example.citiclubapp.Entity.Warrant;\nimport com.example.citiclubapp.R;\n\nimport java.util.List;\n\npublic class PreZhiYaAdapter extends BaseAdapter {\n    Context context;\n    LayoutInflater inflater;\n    List<Warrant> warrants;\n\n    public PreZhiYaAdapter(Context context, List<Warrant> warrants){\n        this.context = context;\n        this.inflater = LayoutInflater.from(context);\n        this.warrants = warrants;\n    }\n\n    @Override\n    public int getCount() {\n        return warrants==null?0:warrants.size();\n    }\n\n    @Override\n    public Object getItem(int i) {\n        return warrants==null?null:warrants.get(i);\n    }\n\n    @Override\n    public long getItemId(int i) {\n        return i;\n    }\n\n    @Override\n    public View getView(int i, View view, ViewGroup viewGroup) {\n        ViewHolder holder;\n        if(view==null){\n            holder = new ViewHolder();\n            view = inflater.inflate(R.layout.activity_cangdanzhiya_pre_item,null);\n            holder.number = view.findViewById(R.id.Pre_Number);\n            holder.category = view.findViewById(R.id.Pre_Category);\n            holder.company = view.findViewById(R.id.Pre_Company);\n            holder.zhiYa = view.findViewById(R.id.ZhiYa_Button);\n            view.setTag(holder);\n        }\n        else{\n            holder = (ViewHolder) view.getTag();\n        }\n\n        holder.number.setText(warrants.get(i).getWarrantID());\n        holder.company.setText(warrants.get(i).getStorageCompany());\n        holder.company.setText(warrants.get(i).getCargoItem());\n        holder.zhiYa.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View view) {\n                view.setBackgroundColor(view.getResources().getColor(R.color.bottom_icon_grey));\n                Toast.makeText(context,\"质押申请已提交，待审批！\",Toast.LENGTH_LONG).show();\n                view.setEnabled(false);\n                //点击按钮后的事件\n            }\n        });\n\n        return view;\n    }\n\n    private static class ViewHolder {\n        TextView number;\n        TextView category;\n        TextView company;\n        Button zhiYa;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/citiclubapp/Adapter/PreZhiYaAdapter.java	(revision d6a8707fa11c5311fc9fa2d1a512c1e9d8c4b783)
++++ app/src/main/java/com/example/citiclubapp/Adapter/PreZhiYaAdapter.java	(date 1603520914668)
+@@ -45,7 +45,7 @@
+         ViewHolder holder;
+         if(view==null){
+             holder = new ViewHolder();
+-            view = inflater.inflate(R.layout.activity_cangdanzhiya_pre_item,null);
++            view = inflater.inflate(R.layout.item_cangdanzhiya_pre,null);
+             holder.number = view.findViewById(R.id.Pre_Number);
+             holder.category = view.findViewById(R.id.Pre_Category);
+             holder.company = view.findViewById(R.id.Pre_Company);
+diff --git app/src/main/res/layout/activity_cangdanzhiya_pre_item.xml app/src/main/res/layout/item_cangdanzhiya_pre.xml
+rename from app/src/main/res/layout/activity_cangdanzhiya_pre_item.xml
+rename to app/src/main/res/layout/item_cangdanzhiya_pre.xml
+diff --git app/src/main/res/layout/recycler_notice_item.xml app/src/main/res/layout/item_recycler_notice.xml
+rename from app/src/main/res/layout/recycler_notice_item.xml
+rename to app/src/main/res/layout/item_recycler_notice.xml
+diff --git app/src/main/res/layout/activity_cangdanzhiya_post_item.xml app/src/main/res/layout/item_cangdanzhiya_post.xml
+rename from app/src/main/res/layout/activity_cangdanzhiya_post_item.xml
+rename to app/src/main/res/layout/item_cangdanzhiya_post.xml
+diff --git app/src/main/res/layout/spinner_item.xml app/src/main/res/layout/item_spinner.xml
+rename from app/src/main/res/layout/spinner_item.xml
+rename to app/src/main/res/layout/item_spinner.xml

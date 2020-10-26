@@ -72,7 +72,7 @@ public class ApplyForStorageActivity extends AppCompatActivity {
         companyList.add("中运物流仓储公司");
         companyList.add("上海基森仓储公司");
         ArrayAdapter<String> adapter=new ArrayAdapter<>(ApplyForStorageActivity.this,
-                R.layout.spinner_item, companyList);
+                R.layout.item_spinner, companyList);
         company.setAdapter(adapter);
     }
 }

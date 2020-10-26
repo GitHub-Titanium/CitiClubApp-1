@@ -45,7 +45,7 @@ public class PreZhiYaAdapter extends BaseAdapter {
         ViewHolder holder;
         if(view==null){
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.activity_cangdanzhiya_pre_item,null);
+            view = inflater.inflate(R.layout.item_cangdanzhiya_pre,null);
             holder.number = view.findViewById(R.id.Pre_Number);
             holder.category = view.findViewById(R.id.Pre_Category);
             holder.company = view.findViewById(R.id.Pre_Company);
